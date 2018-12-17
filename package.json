@@ -1,0 +1,11 @@
+{
+  "name": "get-an-image",
+  "version": "1.0.0",
+  "description": "Get an image from the given URL and upload it via File API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
