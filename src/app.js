@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const extractImageFromUrl = require('./extractImageFromUrl');
+const fileApi = require('./fileApi');
 
 const app = express()
 
@@ -12,7 +13,8 @@ app.post('/', async (req, res) => {
 
     try {
         const imageUrl = await extractImageFromUrl(req.body.url)
-    return res.status(200).send({image: imageUrl})
+        const savedImageUrl = await fileApi.save(imageUrl)
+    return res.status(200).send({imageUrl: savedImageUrl})
     } catch (error) {
         return res.status(500).send({message: error.message})
     }
