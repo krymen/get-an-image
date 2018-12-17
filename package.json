@@ -2,10 +2,19 @@
   "name": "get-an-image",
   "version": "1.0.0",
   "description": "Get an image from the given URL and upload it via File API",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "watch": "nodemon"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Krzysztof Menżyk <krzysztof@menzyk.net>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
 }
