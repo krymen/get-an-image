@@ -1,9 +1,9 @@
 const metascraper = require('metascraper')([require('metascraper-image')()])
-const got = require('got')
+const request = require('request-promise')
 
 const extractImageFromUrl = async (url) => {
-    const { body: html, url: responseUrl } = await got(url)
-    const metadata = await metascraper({ html, url: responseUrl })
+    const html = await request(url)
+    const metadata = await metascraper({ html, url })
 
     if (metadata.image === null) {
         throw new Error(`"${url}" has no images`)

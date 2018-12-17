@@ -13,7 +13,6 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "got": "^9.4.0",
     "metascraper": "^4.8.4",
     "metascraper-image": "^4.8.4",
     "request": "^2.88.0",
