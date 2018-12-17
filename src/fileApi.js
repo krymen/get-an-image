@@ -1,3 +1,4 @@
+const path = require('path')
 const request = require('request-promise')
 const uuid = require('uuid/v4')
 
@@ -5,7 +6,10 @@ const PRIVATE_URL = 'http://file-api.fra02.sl.labs'
 const CDN_URL = 'https://cdn-labs.livechat-static.com/api/file'
 
 const generateFilename = (imageUrl) => {
-    return `${uuid()}.png`
+    const hash = uuid()
+    const extension = path.extname(imageUrl)
+
+    return `${hash}${extension}`
 }
 
 const save = async (imageUrl) => {
